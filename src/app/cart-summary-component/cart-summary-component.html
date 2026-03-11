@@ -1,0 +1,14 @@
+<div class="cart-box">
+  <h2>Cart Summary</h2>
+
+  @if (cartItems().length > 0) {
+    @for (item of cartItems(); track item.id) {
+      <p>{{ item.name }} x {{ item.quantity }} = ₱{{ item.price * item.quantity }}</p>
+    }
+
+    <h3>Total: ₱{{ totalAmount() }}</h3>
+    <button (click)="clearCart()">Clear Cart</button>
+  } @else {
+    <p>Your cart is empty.</p>
+  }
+</div>

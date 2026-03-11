@@ -1,0 +1,18 @@
+<h2>PokéMart</h2>
+
+<div class="grid">
+  @for (item of items(); track item.id) {
+    <div class="item-card">
+      <h3>{{ item.name }}</h3>
+      <p>Price: ₱{{ item.price }}</p>
+      <button (click)="add(item)">Add to Cart</button>
+      <button class="remove-btn" (click)="remove(item.id)">Remove</button>
+    </div>
+  }
+</div>
+
+<app-cart-summary
+  [cartItems]="cart()"
+  [totalAmount]="totalAmount()"
+  (clearCartClicked)="clearCart()">
+</app-cart-summary>

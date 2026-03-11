@@ -1,0 +1,7 @@
+<h2>Kanto Region</h2>
+
+<div class="grid">
+  @for (pokemon of pokemonList(); track pokemon.name) {
+    <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+  }
+</div>
